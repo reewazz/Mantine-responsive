@@ -24,7 +24,7 @@ export const Hero = () => {
             Order Now
           </button>
         </div>
-        <div className="absolute bottom-16 left-6 sm:left-12 md:left-24 w-full sm:w-2/3 md:w-1/2 lg:w-1/3 text-white flex justify-between">
+        <div className="mt-[200px] bottom-16 left-6 sm:left-12 md:left-24 w-full sm:w-2/3 md:w-1/2 lg:w-1/3 text-white flex justify-between">
           <div className="text-center">
             <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold">
               1K+

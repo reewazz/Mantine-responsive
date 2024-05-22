@@ -2,7 +2,7 @@ import { Avatar, Tabs, Text } from "@mantine/core";
 import { useState } from "react";
 
 export const Nav = () => {
-  const [activeButton, setActiveButton] = useState(null);
+  // const [activeButton, setActiveButton] = useState(null);
   const [activeTab, setActiveTab] = useState("first");
 
   return (

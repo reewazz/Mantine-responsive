@@ -1,4 +1,5 @@
-import { Button } from "@mantine/core";
+import { Box, Button } from "@mantine/core";
+import { IconMessage } from "@tabler/icons-react";
 import React, { useState } from "react";
 
 function Reviews() {
@@ -37,8 +38,14 @@ function Reviews() {
       <div className="space-y-4">
         {reviews.map((review) => (
           <div key={review.id} className="bg-white shadow p-4 rounded-lg">
-            <p className="text-gray-800">{review.text}</p>
-            <p className="text-gray-400 text-sm">{`Updated: ${review.updated}`}</p>
+            <Box className="flex gap-3 ">
+              {" "}
+              <IconMessage />
+              <Box>
+                <p className="text-gray-800">{review.text}</p>
+                <p className="text-gray-400 text-sm">{`Updated: ${review.updated}`}</p>
+              </Box>
+            </Box>
           </div>
         ))}
       </div>

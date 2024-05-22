@@ -3,21 +3,11 @@ import { useState } from "react";
 
 export const Nav = () => {
   const [activeButton, setActiveButton] = useState(null);
-
-  const handleButtonClick = (buttonId) => {
-    console.log("emhbfjhywgfjhwebj");
-    setActiveButton(buttonId);
-  };
-
-  const getButtonStyle = (buttonId) => {
-    return activeButton === buttonId
-      ? "bg-gray-200 text-black"
-      : "bg-blue-500 text-white";
-  };
+  const [activeTab, setActiveTab] = useState("first");
 
   return (
     <>
-      <div className="profile w-full px-8 py-6 flex gap-6 items-center bg-[#395389] text-white">
+      <div className="profile w-full px-8 py-6 flex gap-6 items-center  bg-[#395389] text-white">
         <Avatar
           size="xl"
           src="https://byuc.wordpress.com/wp-content/uploads/2012/07/avat-2.jpg"
@@ -29,13 +19,40 @@ export const Nav = () => {
         </div>
       </div>
 
-      <Tabs defaultValue="first">
-        <div className="tabs bg-[#395389] text-white px-6">
+      <Tabs
+        value={activeTab}
+        onChange={setActiveTab}
+        defaultValue="first"
+        variant="unstyled"
+      >
+        <div className="tabs bg-[#395389] text-white font-bold px-6">
           <Tabs.List>
-            <Tabs.Tab onClick={() => handleButtonClick(1)} value="first">
-              Resume
+            <Tabs.Tab
+              value="first"
+              styles={{
+                tab: {
+                  backgroundColor: activeTab === "first" && "white",
+                  color: activeTab === "first" && "#395389",
+                  borderTopRightRadius: "10px",
+                  borderTopLeftRadius: "10px",
+                },
+              }}
+            >
+              <div className={` `}>Resume</div>
             </Tabs.Tab>
-            <Tabs.Tab value="second">Cover</Tabs.Tab>
+            <Tabs.Tab
+              value="second"
+              styles={{
+                tab: {
+                  backgroundColor: activeTab === "second" && "white",
+                  color: activeTab === "second" && "#395389",
+                  borderTopRightRadius: "10px",
+                  borderTopLeftRadius: "10px",
+                },
+              }}
+            >
+              Cover
+            </Tabs.Tab>
           </Tabs.List>
         </div>
 

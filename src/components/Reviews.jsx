@@ -33,7 +33,7 @@ function Reviews() {
   };
 
   return (
-    <div className="max-w-md mx-auto">
+    <div className="mx-auto p-4 space-y-4 w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl">
       <div className="space-y-4">
         {reviews.map((review) => (
           <div key={review.id} className="bg-white shadow p-4 rounded-lg">
@@ -45,14 +45,13 @@ function Reviews() {
       <textarea
         value={newReview}
         onChange={handleInputChange}
-        placeholder="Write a remarks"
+        placeholder="Write a review"
         className="mt-4 w-full p-2 border rounded-lg"
       />
       <Button
         onClick={handleSubmit}
         variant="filled"
         className="mt-2 w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-700"
-        color="violet"
         fullWidth
       >
         Submit Review

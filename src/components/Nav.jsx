@@ -2,47 +2,40 @@ import { Avatar, Tabs, Text } from "@mantine/core";
 import { useState } from "react";
 
 export const Nav = () => {
-  const [activeTab, setActiveTab] = useState("first");
+  const [activeButton, setActiveButton] = useState(null);
+
+  const handleButtonClick = (buttonId) => {
+    console.log("emhbfjhywgfjhwebj");
+    setActiveButton(buttonId);
+  };
+
+  const getButtonStyle = (buttonId) => {
+    return activeButton === buttonId
+      ? "bg-gray-200 text-black"
+      : "bg-blue-500 text-white";
+  };
 
   return (
     <>
-      <div className="profile w-full py-4 flex gap-6 bg-violet-800 text-white">
+      <div className="profile w-full px-8 py-6 flex gap-6 items-center bg-[#395389] text-white">
         <Avatar
+          size="xl"
           src="https://byuc.wordpress.com/wp-content/uploads/2012/07/avat-2.jpg"
           alt="it's me"
         />
-        <div className="texts">
+        <div className="texts font-serif">
           <Text>Riwaj Neupane</Text>
           <Text>Junior Intern</Text>
         </div>
       </div>
 
       <Tabs defaultValue="first">
-        <div className="tabs bg-violet-800">
+        <div className="tabs bg-[#395389] text-white px-6">
           <Tabs.List>
-            <Tabs.Tab
-              value="first"
-              onClick={() => setActiveTab("first")}
-              className={`text-sm px-6 py-2 rounded-full ml-2 ${
-                activeTab === "coverLetter"
-                  ? "bg-white text-blue-700"
-                  : "text-white hover:bg-white hover:text-blue-700"
-              }`}
-            >
+            <Tabs.Tab onClick={() => handleButtonClick(1)} value="first">
               Resume
             </Tabs.Tab>
-            <Tabs.Tab
-              onClick={() => setActiveTab("second")}
-              className={`text-sm px-6 py-2 rounded-full ${
-                activeTab === "resume"
-                  ? "bg-white text-blue-700"
-                  : "text-white hover:bg-white hover:text-blue-700"
-              }`}
-              variant="filled"
-              value="second"
-            >
-              Cover
-            </Tabs.Tab>
+            <Tabs.Tab value="second">Cover</Tabs.Tab>
           </Tabs.List>
         </div>
 
@@ -58,7 +51,7 @@ export const Nav = () => {
           <img
             className="w-full h-auto"
             src="https://blog-cdn.novoresume.com/articles/how-to-write-a-cover-letter-guide/Receptionist-Cover-Letter-Example.webp"
-            alt="Software Engineer CV"
+            alt="Cover Letter Example"
           />
         </Tabs.Panel>
       </Tabs>

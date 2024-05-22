@@ -18,17 +18,11 @@ export const ModalForm = () => {
         radius={0}
         transitionProps={{ transition: "fade", duration: 200 }}
       >
-        <Box className="modalbox flex flex-col lg:flex-row gap-4 lg:gap-20 justify-center ">
-          <div className="resume w-full  lg:w-1/2 ">
+        <Box className="modalbox flex flex-col lg:flex-row gap-4 lg:gap-20 justify-center p-4">
+          <div className="resume w-full lg:w-1/2 p-4">
             <Nav />
-
-            {/* <img
-              className="w-full h-auto"
-              src="https://resumaker.ai/s3/en-US/cv-examples/Software-Engineer-CV-Example.png"
-              alt="Software Engineer CV"
-            /> */}
           </div>
-          <div className="remarks  mt-6 lg:mt-7 w-full lg:w-1/4">
+          <div className="remarks w-full flex-col items-center justify-center lg:w-1/4 mt-6 lg:mt-6 p-4">
             <Text className="font-bold">Phone Number</Text>
             <Box className="flex flex-row gap-3 items-center">
               <CopyPhone />

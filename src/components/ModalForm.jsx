@@ -26,13 +26,13 @@ export const ModalForm = () => {
             <Text className="font-bold">Phone Number</Text>
             <Box className="flex flex-row gap-3 items-center">
               <CopyPhone />
-              <Text className="font-bold">25151530651</Text>
+              <Text className="font-bold">98456758522</Text>
             </Box>
 
             <Text className="font-bold">Email</Text>
             <Box className="flex flex-row gap-3 items-center">
               <CopyEmail />
-              <Text className="font-bold">ydgqwydgy@gmail.com</Text>
+              <Text className="font-bold">riwaj.neupane@jobaxle.com</Text>
             </Box>
             <p className="font-bold mt-2">Remarks*</p>
             <Reviews />
